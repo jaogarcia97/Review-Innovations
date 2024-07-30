@@ -16,6 +16,10 @@
 		0C97AD6A2C57E15700761EEF /* Review_InnovationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C97AD692C57E15700761EEF /* Review_InnovationsTests.swift */; };
 		0C97AD742C57E15700761EEF /* Review_InnovationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C97AD732C57E15700761EEF /* Review_InnovationsUITests.swift */; };
 		0C97AD762C57E15700761EEF /* Review_InnovationsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C97AD752C57E15700761EEF /* Review_InnovationsUITestsLaunchTests.swift */; };
+		0C97AD862C57F26900761EEF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C97AD852C57F26900761EEF /* HomeView.swift */; };
+		0C97AD882C57F27900761EEF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C97AD872C57F27900761EEF /* SettingsView.swift */; };
+		0C97AD8C2C57F38100761EEF /* MainBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C97AD8B2C57F38100761EEF /* MainBackground.swift */; };
+		0C97AD8E2C57F70700761EEF /* SeatSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C97AD8D2C57F70700761EEF /* SeatSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		0C97AD6F2C57E15700761EEF /* Review InnovationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Review InnovationsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C97AD732C57E15700761EEF /* Review_InnovationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review_InnovationsUITests.swift; sourceTree = "<group>"; };
 		0C97AD752C57E15700761EEF /* Review_InnovationsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review_InnovationsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0C97AD852C57F26900761EEF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0C97AD872C57F27900761EEF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0C97AD8B2C57F38100761EEF /* MainBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBackground.swift; sourceTree = "<group>"; };
+		0C97AD8D2C57F70700761EEF /* SeatSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,10 @@
 		0C97AD522C57E15500761EEF /* Review Innovations */ = {
 			isa = PBXGroup;
 			children = (
+				0C97AD892C57F34200761EEF /* Helpers */,
+				0C97AD842C57F22200761EEF /* Settings */,
+				0C97AD832C57F1FC00761EEF /* Home */,
+				0C97AD822C57EEDC00761EEF /* SeatSelection */,
 				0C97AD532C57E15500761EEF /* Review_InnovationsApp.swift */,
 				0C97AD552C57E15500761EEF /* ContentView.swift */,
 				0C97AD572C57E15700761EEF /* Assets.xcassets */,
@@ -131,6 +143,46 @@
 				0C97AD752C57E15700761EEF /* Review_InnovationsUITestsLaunchTests.swift */,
 			);
 			path = "Review InnovationsUITests";
+			sourceTree = "<group>";
+		};
+		0C97AD822C57EEDC00761EEF /* SeatSelection */ = {
+			isa = PBXGroup;
+			children = (
+				0C97AD8D2C57F70700761EEF /* SeatSelectionView.swift */,
+			);
+			path = SeatSelection;
+			sourceTree = "<group>";
+		};
+		0C97AD832C57F1FC00761EEF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0C97AD852C57F26900761EEF /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0C97AD842C57F22200761EEF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0C97AD872C57F27900761EEF /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0C97AD892C57F34200761EEF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0C97AD8A2C57F34700761EEF /* UIHelpers */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0C97AD8A2C57F34700761EEF /* UIHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				0C97AD8B2C57F38100761EEF /* MainBackground.swift */,
+			);
+			path = UIHelpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,9 +315,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C97AD8E2C57F70700761EEF /* SeatSelectionView.swift in Sources */,
 				0C97AD602C57E15700761EEF /* Review_Innovations.xcdatamodeld in Sources */,
+				0C97AD8C2C57F38100761EEF /* MainBackground.swift in Sources */,
 				0C97AD5D2C57E15700761EEF /* Persistence.swift in Sources */,
 				0C97AD562C57E15500761EEF /* ContentView.swift in Sources */,
+				0C97AD882C57F27900761EEF /* SettingsView.swift in Sources */,
+				0C97AD862C57F26900761EEF /* HomeView.swift in Sources */,
 				0C97AD542C57E15500761EEF /* Review_InnovationsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
