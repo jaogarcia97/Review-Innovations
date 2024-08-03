@@ -15,32 +15,41 @@ struct SectionScheduleCell: View {
         ZStack {
             Rectangle()
                 .foregroundColor(.white)
-                .frame(width: 300,height: 120)
                 .cornerRadius(8)
                 .shadow(color: .yellow, radius: 1, x: 0, y: 0)
             
-            VStack(alignment: .leading){
-                Text("\(schedule.timeSlot.displayText)")
-                    .font(.system(size: 25))
+            HStack {
+                Text("\(schedule.sectionName)")
+                    .font(.system(size: 50))
                     .bold()
+                    .padding(.leading, 20)
                 
-                Text("on \(schedule.classDays.displayText)")
-                    .font(.system(size: 14))
-                    .bold()
+                Spacer().frame(width:5)
                 
-                Text("at \(schedule.branch.rawValue) Branch")
-                    .font(.system(size: 14))
+                VStack(alignment: .leading){
+                    Text("\(schedule.timeSlot.displayText)")
+                        .font(.system(size: 20))
+                        .bold()
                     
+                    Text("on \(schedule.classDays.displayText)")
+                        .font(.system(size: 12))
+                        .bold()
+                    
+                    Text("at \(schedule.branch.rawValue) Branch")
+                        .font(.system(size: 12))
+                        
+                }
+                //.frame(maxWidth: .infinity , alignment: .leading)
+                Spacer()
             }
-            .frame(maxWidth: .infinity , alignment: .leading)
-            .padding(.leading, 12)
             .foregroundColor(.black)
         }
+        .frame(width: 330,height: 110)
     }
 }
 
 #Preview {
-    SectionScheduleCell(schedule: ClassSchedule(sectionName: "A1",
+    SectionScheduleCell(schedule: ClassSchedule(sectionName: "A3",
                                                 classDays: .mwf,
                                                 branch: .baguio,
                                                 timeSlot: .afternoon))

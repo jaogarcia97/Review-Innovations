@@ -13,6 +13,17 @@ struct SeatSelectionView: View {
     @State private var animateGradient: Bool = false
     @ObservedObject var viewModel = SeatSelectionViewModel(numberOfSeats: 120)
     
+    @State private var selectedClassDays: ClassDays? = nil
+    @State private var selectedBranch: Branch? = nil
+    
+    // Computed property to filter schedules based on selected class days
+    var filteredSchedules: [ClassSchedule] {
+        model.classes.filter { schedule in
+            (selectedClassDays == nil || schedule.classDays == selectedClassDays) &&
+            (selectedBranch == nil || schedule.branch == selectedBranch)
+        }
+    }
+    
     let columns = [
         GridItem(.fixed(20)),
         GridItem(.fixed(20)),
@@ -41,31 +52,31 @@ struct SeatSelectionView: View {
                     }
                     
                     HStack(){
-                        CustomButton(label: "MWF") {
-                            // Action for MWF button
+                        CustomButton(label: "MWF", isSelected: selectedClassDays == .mwf) {
+                            selectedClassDays = .mwf
                         }
-                        CustomButton(label: "TThS") {
-                            // Action for TThS button
+                        CustomButton(label: "TThS", isSelected: selectedClassDays == .tths) {
+                            selectedClassDays = .tths
                         }
-                        CustomButton(label: "WKND") {
-                            // Action for WKND button
+                        CustomButton(label: "WKND", isSelected: selectedClassDays == .wknd) {
+                            selectedClassDays = .wknd
                         }
                         Spacer()
                     }
                     .padding(.leading, 10)
                     
                     HStack(){
-                        CustomButton(label: "MNL") {
-                            // Action for MWF button
+                        CustomButton(label: "MNL", isSelected: selectedBranch == .manila) {
+                            selectedBranch = .manila
                         }
-                        CustomButton(label: "BGUIO") {
-                            // Action for TThS button
+                        CustomButton(label: "BGUIO", isSelected: selectedBranch == .baguio) {
+                            selectedBranch = .baguio
                         }
-                        CustomButton(label: "CEB") {
-                            // Action for WKND button
+                        CustomButton(label: "CEB", isSelected: selectedBranch == .cebu) {
+                            selectedBranch = .cebu
                         }
-                        CustomButton(label: "DVAO") {
-                            // Action for WKND button
+                        CustomButton(label: "DVAO", isSelected: selectedBranch == .davao) {
+                            selectedBranch = .davao
                         }
                         Spacer()
                     }
@@ -75,7 +86,7 @@ struct SeatSelectionView: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            ForEach(model.classes) { schedule in
+                            ForEach(filteredSchedules) { schedule in
                                 Button {
                                     // Action for schedule
                                 } label: {
@@ -180,8 +191,6 @@ struct SeatSelectionView: View {
         //.navigationBarBackButtonHidden(true)
         .tabBar(hidden: isTabBarHidden)
         
-        
-        
     }
 }
 
@@ -242,6 +251,7 @@ struct TabBarAccessor: UIViewControllerRepresentable {
 
 struct CustomButton: View {
     var label: String
+    var isSelected: Bool
     var action: () -> Void
     
     var body: some View {
@@ -250,10 +260,10 @@ struct CustomButton: View {
                 Rectangle()
                     .cornerRadius(5)
                     .frame(width: 70, height: 25)
-                    .foregroundColor(.white)
+                    .foregroundColor(isSelected ? .orange : .white)
                     .shadow(color: .yellow, radius: 1, x: 0, y: 0)
                 Text(label)
-                    .foregroundColor(.black)
+                    .foregroundColor(isSelected ? .white : .black)
                     .bold()
             }
         }

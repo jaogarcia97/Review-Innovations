@@ -44,9 +44,9 @@ enum Branch: String, Identifiable {
 }
 
 enum Timeslot: String, Identifiable {
-    case morning = "8AM-12PM"
-    case afternoon = "1PM-5PM"
-    case evening = "6PM-9PM"
+    case morning = "8:00AM - 12:00 PM"
+    case afternoon = "1:30PM - 5:30PM"
+    case evening = "6:30PM - 9:30PM"
     
     var id: Timeslot { self }
 }
@@ -55,8 +55,8 @@ extension Timeslot {
     var displayText: String {
         switch self {
         case .morning: return "8:00AM - 12:00PM"
-        case .afternoon: return "1:00PM - 5:00PM"
-        case .evening: return "6:00PM - 9:00PM"
+        case .afternoon: return "1:30PM - 5:30PM"
+        case .evening: return "6:30PM - 9:30PM"
         }
     }
 }

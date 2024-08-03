@@ -16,7 +16,7 @@ struct Review_InnovationsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                //.environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(model)
         }
     }
