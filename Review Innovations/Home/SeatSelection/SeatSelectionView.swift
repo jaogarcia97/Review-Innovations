@@ -16,6 +16,8 @@ struct SeatSelectionView: View {
     @State private var selectedClassDays: ClassDays? = nil
     @State private var selectedBranch: Branch? = nil
     
+    @State private var showConfirmationSheet = false
+    
     // Computed property to filter schedules based on selected class days
     var filteredSchedules: [ClassSchedule] {
         model.classes.filter { schedule in
@@ -141,9 +143,11 @@ struct SeatSelectionView: View {
                         // Left side seats
                         LazyVGrid(columns: columns, spacing: 4) {
                             ForEach(0..<(viewModel.seats.count / 2), id: \.self) { index in
-                                SeatView(isSelected: viewModel.seats[index].isSelected)
+                                SeatView(isSelected: viewModel.seats[index].isSelected, isTaken: viewModel.seats[index].isTaken)
                                     .onTapGesture {
-                                        viewModel.toggleSeatSelection(at: index)
+                                        if !viewModel.seats[index].isTaken {
+                                            viewModel.toggleSeatSelection(at: index)
+                                        }
                                     }
                             }
                         }
@@ -154,9 +158,11 @@ struct SeatSelectionView: View {
                         // Right side seats
                         LazyVGrid(columns: columns, spacing: 4) {
                             ForEach((viewModel.seats.count / 2)..<viewModel.seats.count, id: \.self) { index in
-                                SeatView(isSelected: viewModel.seats[index].isSelected)
+                                SeatView(isSelected: viewModel.seats[index].isSelected, isTaken: viewModel.seats[index].isTaken)
                                     .onTapGesture {
-                                        viewModel.toggleSeatSelection(at: index)
+                                        if !viewModel.seats[index].isTaken {
+                                            viewModel.toggleSeatSelection(at: index)
+                                        }
                                     }
                             }
                         }
@@ -168,8 +174,8 @@ struct SeatSelectionView: View {
             
             Spacer()
             
-            NavigationLink {
-                
+            Button {
+                showConfirmationSheet = true
             } label: {
                 ZStack{
                     Rectangle()
@@ -185,6 +191,13 @@ struct SeatSelectionView: View {
                 
             }
             .padding(.bottom, 0)
+            .sheet(isPresented: $showConfirmationSheet) {
+                //SeatConfirmationView()
+                NavigationStack {
+                    EnterStudentKeyView()
+                }
+                .presentationDetents([.fraction(0.6)])
+            }
             
         }
         .background(SeatSelectionBackground())
@@ -196,10 +209,11 @@ struct SeatSelectionView: View {
 
 struct SeatView: View {
     let isSelected: Bool
+    let isTaken: Bool
     
     var body: some View {
         Rectangle()
-            .fill(isSelected ? Color.yellow : Color.gray)
+            .fill(isTaken ? Color.red : (isSelected ? Color.yellow : Color.gray))
             .frame(width: 20, height: 20)
             .cornerRadius(2)
             .padding(2)
@@ -213,16 +227,26 @@ class SeatSelectionViewModel: ObservableObject {
     
     init(numberOfSeats: Int) {
         self.seats = Array(repeating: Seat(), count: numberOfSeats)
+        randomizeTakenSeats()
     }
     
     func toggleSeatSelection(at index: Int) {
         seats[index].isSelected.toggle()
+    }
+    
+    private func randomizeTakenSeats() {
+        let takenSeatCount = Int(Double(seats.count) * 0.3) // 30% of seats taken
+        for _ in 0..<takenSeatCount {
+            let randomIndex = Int.random(in: 0..<seats.count)
+            seats[randomIndex].isTaken = true
+        }
     }
 }
 
 struct Seat: Identifiable {
     let id = UUID()
     var isSelected: Bool = false
+    var isTaken: Bool = false
 }
 
 
