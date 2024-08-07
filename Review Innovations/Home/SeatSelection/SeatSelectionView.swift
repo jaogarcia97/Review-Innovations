@@ -196,7 +196,7 @@ struct SeatSelectionView: View {
                 NavigationStack {
                     EnterStudentKeyView()
                 }
-                .presentationDetents([.fraction(0.6)])
+                .presentationDetents([.fraction(0.5)])
             }
             
         }

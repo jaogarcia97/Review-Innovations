@@ -22,7 +22,6 @@ struct SeatConfirmationView: View {
     var body: some View {
         VStack(alignment: .leading){
             
-            Spacer().frame(height: 20)
             HStack{
                 Text("Confirm Seat")
                     .bold()
@@ -111,7 +110,7 @@ struct SeatConfirmationView: View {
             Spacer()
             //MARK: - Confirm Button
             NavigationLink{
-                
+                SuccessScreenView()
             } label: {
                 ZStack{
                     Rectangle()
