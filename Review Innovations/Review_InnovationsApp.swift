@@ -10,11 +10,14 @@ import SwiftUI
 @main
 struct Review_InnovationsApp: App {
     let persistenceController = PersistenceController.shared
+    
+    @StateObject private var model = Model()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                //.environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(model)
         }
     }
 }

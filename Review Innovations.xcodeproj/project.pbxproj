@@ -20,6 +20,13 @@
 		0C97AD882C57F27900761EEF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C97AD872C57F27900761EEF /* SettingsView.swift */; };
 		0C97AD8C2C57F38100761EEF /* MainBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C97AD8B2C57F38100761EEF /* MainBackground.swift */; };
 		0C97AD8E2C57F70700761EEF /* SeatSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C97AD8D2C57F70700761EEF /* SeatSelectionView.swift */; };
+		0CA206322C5CE51C0079246E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA206312C5CE51C0079246E /* Model.swift */; };
+		0CA206342C5CE5360079246E /* ClassSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA206332C5CE5360079246E /* ClassSchedule.swift */; };
+		0CDAB3B42C5E22D400167F4A /* SeatConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDAB3B32C5E22D400167F4A /* SeatConfirmationView.swift */; };
+		0CDAB3B62C5E328F00167F4A /* EnterStudentKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDAB3B52C5E328F00167F4A /* EnterStudentKeyView.swift */; };
+		0CDAB3B82C5F6D7B00167F4A /* SuccessScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDAB3B72C5F6D7B00167F4A /* SuccessScreenView.swift */; };
+		0CF847552C59FB0300BE7341 /* SeatSelectionBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF847542C59FB0300BE7341 /* SeatSelectionBackground.swift */; };
+		0CF847572C5A087A00BE7341 /* SectionScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF847562C5A087A00BE7341 /* SectionScheduleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +63,13 @@
 		0C97AD872C57F27900761EEF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0C97AD8B2C57F38100761EEF /* MainBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBackground.swift; sourceTree = "<group>"; };
 		0C97AD8D2C57F70700761EEF /* SeatSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatSelectionView.swift; sourceTree = "<group>"; };
+		0CA206312C5CE51C0079246E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		0CA206332C5CE5360079246E /* ClassSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSchedule.swift; sourceTree = "<group>"; };
+		0CDAB3B32C5E22D400167F4A /* SeatConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatConfirmationView.swift; sourceTree = "<group>"; };
+		0CDAB3B52C5E328F00167F4A /* EnterStudentKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterStudentKeyView.swift; sourceTree = "<group>"; };
+		0CDAB3B72C5F6D7B00167F4A /* SuccessScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessScreenView.swift; sourceTree = "<group>"; };
+		0CF847542C59FB0300BE7341 /* SeatSelectionBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatSelectionBackground.swift; sourceTree = "<group>"; };
+		0CF847562C5A087A00BE7341 /* SectionScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionScheduleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,12 +120,12 @@
 		0C97AD522C57E15500761EEF /* Review Innovations */ = {
 			isa = PBXGroup;
 			children = (
+				0CA2062F2C5CDF4D0079246E /* Navigation */,
+				0CA206302C5CE5050079246E /* Model */,
 				0C97AD892C57F34200761EEF /* Helpers */,
 				0C97AD842C57F22200761EEF /* Settings */,
 				0C97AD832C57F1FC00761EEF /* Home */,
-				0C97AD822C57EEDC00761EEF /* SeatSelection */,
 				0C97AD532C57E15500761EEF /* Review_InnovationsApp.swift */,
-				0C97AD552C57E15500761EEF /* ContentView.swift */,
 				0C97AD572C57E15700761EEF /* Assets.xcassets */,
 				0C97AD5C2C57E15700761EEF /* Persistence.swift */,
 				0C97AD5E2C57E15700761EEF /* Review_Innovations.xcdatamodeld */,
@@ -149,6 +163,10 @@
 			isa = PBXGroup;
 			children = (
 				0C97AD8D2C57F70700761EEF /* SeatSelectionView.swift */,
+				0CF847562C5A087A00BE7341 /* SectionScheduleCell.swift */,
+				0CDAB3B32C5E22D400167F4A /* SeatConfirmationView.swift */,
+				0CDAB3B52C5E328F00167F4A /* EnterStudentKeyView.swift */,
+				0CDAB3B72C5F6D7B00167F4A /* SuccessScreenView.swift */,
 			);
 			path = SeatSelection;
 			sourceTree = "<group>";
@@ -157,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				0C97AD852C57F26900761EEF /* HomeView.swift */,
+				0C97AD822C57EEDC00761EEF /* SeatSelection */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -181,8 +200,26 @@
 			isa = PBXGroup;
 			children = (
 				0C97AD8B2C57F38100761EEF /* MainBackground.swift */,
+				0CF847542C59FB0300BE7341 /* SeatSelectionBackground.swift */,
 			);
 			path = UIHelpers;
+			sourceTree = "<group>";
+		};
+		0CA2062F2C5CDF4D0079246E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				0C97AD552C57E15500761EEF /* ContentView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		0CA206302C5CE5050079246E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0CA206312C5CE51C0079246E /* Model.swift */,
+				0CA206332C5CE5360079246E /* ClassSchedule.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,13 +353,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C97AD8E2C57F70700761EEF /* SeatSelectionView.swift in Sources */,
+				0CA206342C5CE5360079246E /* ClassSchedule.swift in Sources */,
 				0C97AD602C57E15700761EEF /* Review_Innovations.xcdatamodeld in Sources */,
+				0CDAB3B62C5E328F00167F4A /* EnterStudentKeyView.swift in Sources */,
 				0C97AD8C2C57F38100761EEF /* MainBackground.swift in Sources */,
 				0C97AD5D2C57E15700761EEF /* Persistence.swift in Sources */,
 				0C97AD562C57E15500761EEF /* ContentView.swift in Sources */,
+				0CDAB3B42C5E22D400167F4A /* SeatConfirmationView.swift in Sources */,
+				0CF847552C59FB0300BE7341 /* SeatSelectionBackground.swift in Sources */,
+				0CF847572C5A087A00BE7341 /* SectionScheduleCell.swift in Sources */,
 				0C97AD882C57F27900761EEF /* SettingsView.swift in Sources */,
+				0CA206322C5CE51C0079246E /* Model.swift in Sources */,
 				0C97AD862C57F26900761EEF /* HomeView.swift in Sources */,
 				0C97AD542C57E15500761EEF /* Review_InnovationsApp.swift in Sources */,
+				0CDAB3B82C5F6D7B00167F4A /* SuccessScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
